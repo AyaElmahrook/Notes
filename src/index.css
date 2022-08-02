@@ -9,15 +9,21 @@ body {
   height: 90vh !important;
 }
 .add {
+  z-index: 1000;
+  left: -87px;
+  background-color: #24353f;
   font-size: 20px;
-  transition: 0.2s;
+  transition: 0.5s;
   color: #fff;
+  border: 1px solid #fff;
   box-shadow: 0px 23px 93px 1px rgba(0, 0, 0, 0.75);
 }
 
 .add:hover {
  transform: scale(1.05);
-  color: #fff;
+ left: 0px;
+ border: none;
+ background-color: #24353f;
 }
 
 .note {

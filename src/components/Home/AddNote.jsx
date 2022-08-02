@@ -32,8 +32,8 @@ export default function AddNote({getUserNotes}) {
   return (
     <>
       {/* Add button */}
-      <button type="button" className="add p-2 btn mt-3" data-bs-toggle="modal" data-bs-target="#addNewNote">
-        <i className="fas fa-plus-circle"></i> Add Note
+      <button type="button" className="add p-2 btn mt-3 position-fixed top-25" data-bs-toggle="modal" data-bs-target="#addNewNote">
+      Add Note <i className="fas fa-plus-circle px-1"></i>
       </button>
       {/* Add model */}
       <div className="modal fade" id="addNewNote" aria-labelledby="exampleModalLabel" aria-hidden="true">

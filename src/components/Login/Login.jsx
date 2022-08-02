@@ -28,7 +28,6 @@ export default function Login({getToken}) {
         setError(data.message.split(',')[0])
     }
     setWait(false);
-    console.log(data.message);
   }
   return (
 <div className='container'>

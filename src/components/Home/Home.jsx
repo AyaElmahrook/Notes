@@ -19,6 +19,17 @@ function Home() {
         if (data.message === "success") {
             setWait(false);
             setUserNotes(data.Notes);
+        }else if(data.message === "no notes found"){
+            setWait(false);
+            Swal.fire({
+                title: 'Give it a trial, still can add your 1st note!',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              })
         }
     }
     /* Delete note function */
@@ -98,13 +109,12 @@ function Home() {
     }, [])
     return (
         <>
+        {/* Add note */}
+         <AddNote getUserNotes={getUserNotes} />
             <div id='homeContainer' className="container">
                 {wait ? <h2 className='text-center'><i className="fas fa-spinner fa-spin"></i></h2> : ''}
                 <div className="row">
-                    <div className="col-lg-3 col-md-4 m-auto">
-                        <AddNote getUserNotes={getUserNotes} />
-                    </div>
-                    {/* Note */}
+                    {/* Note view*/}
                     {userNotes && userNotes.map((userNote, index) => {
                         return (
                             <div className="col-lg-3 col-md-4 my-4 position-relative" key={index}>
@@ -141,7 +151,7 @@ function Home() {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button className="btn btn-info"><i className="fas fa-plus-circle"></i> Add Note</button>
+                                <button className="btn btn-info"> Edit Note</button>
                             </div>
                         </div>
                     </form>
