@@ -106,7 +106,7 @@ function Home() {
         if (token) {
             getUserNotes();
         }
-    }, [])
+    })
     return (
         <>
         {/* Add note */}

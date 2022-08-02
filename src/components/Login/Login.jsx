@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import $ from 'jquery'
 
 export default function Login({getToken}) {
     let navigate=useNavigate();
